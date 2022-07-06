@@ -22,16 +22,19 @@ public class Task10 {
             }
             System.out.println();
         }
+        System.out.println();
+
         //1)
         for(int i = 0; i < numbers[2].length; i++) {
             sum1 += numbers[2][i];
         }
-        System.out.println(sum1);
+        System.out.printf("Сумма элементов третьей строки массива: %d\n", sum1);
+
 
         //2)
         for (int[] number : numbers) {
             sum2 += number[1];
         }
-        System.out.println(sum2);
+        System.out.printf("Сумма элементов второго СТОЛБЦА массива: %d\n", sum2);
     }
 }
