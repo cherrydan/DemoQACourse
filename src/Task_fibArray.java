@@ -1,11 +1,10 @@
 import java.util.Scanner;
-/* Рекурсивная функция вычисления чисел Фибоначчи, сильно замедляет работу после 42-го числа*/
 
-public class Task_fib {
+public class Task_fibArray {
 
-    //Функция fib будет возвращать n-ное число фибоначчи.
-    //Update task:
-    //3. Верно ли, что сумма первых n членов последовательности Фибоначчи есть четное число?
+    /*
+    Вывод чисел Фибоначчи на статическом массиве
+     */
     public static void main(String[] args) {
         long sum = 0;
         Scanner sc = new Scanner(System.in);
@@ -16,10 +15,10 @@ public class Task_fib {
             System.out.printf("Fib(%d) = %d\n", i, fib(i));
         }
         if(checkIsEven(sum)) {
-            System.out.printf("Сумма %d членов послед. Фибоначчи = %d есть чётное число\n", n, sum);
+            System.out.printf("\nСумма %d членов послед. Фибоначчи = %d есть чётное число\n", n, sum);
         }
         else {
-            System.out.printf("Сумма %d членов послед. Фибоначчи = %d есть нечётное число\n", n, sum);
+            System.out.printf("\nСумма %d членов послед. Фибоначчи = %d есть нечётное число\n", n, sum);
         }
 
         sc.close();
@@ -33,11 +32,13 @@ public class Task_fib {
     }
 
     public static long fib(int n) {
-
-       if (n <= 1) {
-           return n;
-       }
-
-       return fib(n-1) + fib(n-2);
+        long[] arr = new long[n+1];
+        arr[0] = 0;
+        arr[1] = 1;
+        for(int i = 2; i < arr.length; ++i) {
+            arr[i] = arr[i - 1] + arr[i - 2];
+        }
+        return arr[n];
     }
 }
+
