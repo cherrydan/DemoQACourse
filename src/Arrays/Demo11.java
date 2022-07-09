@@ -8,9 +8,9 @@ public class Demo11 {
 
     public static void main(String[] args) {
         String[][] things = new String[][]{
-                {"table", "hat", "pancake", "apple"},
-                {"pear", "pencil", "stick", "pen"},
-                {"a", "b", "c", "d"}
+                {"table", "hat", "pancake", "apple"}, //0.0 0.1 0.2 0.3
+                {"pear", "pencil", "stick", "pen"},   //1.0 1.1 1.2 1.3
+                {"a", "b", "c", "d"}                  //2.0 2.1 2.2 2.3
         };
 
         int rows = things.length;
@@ -19,25 +19,24 @@ public class Demo11 {
         //создаём место для нового массива, такого же размера как и исходный
         String[][] thingsCopy = new String[rows][cols];
 
-        for(int i = 0; i < rows; i++) {
-            for(int j = 0; j < cols; j++) {
-                if(i == 0) {
-                    thingsCopy[i][j] = things[rows-1][j];
-                }
-                else if(i == (rows - 1)) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (i == 0) {
+                    thingsCopy[i][j] = things[rows - 1][j];
+                } else if (i == (rows - 1)) {
                     thingsCopy[i][j] = things[0][j];
-                }
-                else
-                thingsCopy[i][j] = things[i][j];
+                } else
+                    thingsCopy[i][j] = things[i][j];
             }
         }
 
         for(int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                System.out.printf("%s ", thingsCopy[i][j]);
+            for(int j = 0; j < cols; j++) {
+                System.out.print(thingsCopy[i][j] + " ");
             }
             System.out.println();
         }
 
     }
 }
+
