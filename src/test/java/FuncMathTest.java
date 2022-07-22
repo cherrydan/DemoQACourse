@@ -26,5 +26,12 @@ public class FuncMathTest {
         Assertions.assertEquals(2, math.getCalls());
     }
 
+    @Test
+    public void factorial() {
+
+
+
+    }
+
 
 }
