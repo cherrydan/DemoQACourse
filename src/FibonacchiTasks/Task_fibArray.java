@@ -1,3 +1,5 @@
+package FibonacchiTasks;
+
 import java.util.Scanner;
 
 public class Task_fibArray {
