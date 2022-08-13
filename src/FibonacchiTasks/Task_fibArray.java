@@ -13,8 +13,8 @@ public class Task_fibArray {
         System.out.println("Введите сколько чисел фибоначчи хотите вывести --> ");
         int n = sc.nextInt();
         for(int i = 1; i <= n; i++) {
-            sum += fib(i); // суммируем все члены нашей последовательности фибоначчи
-            System.out.printf("Fib(%d) = %d\n", i, fib(i));
+            sum += fib_a(i); // суммируем все члены нашей последовательности фибоначчи
+            System.out.printf("Fib(%d) = %d\n", i, fib_a(i));
         }
         if(checkIsEven(sum)) {
             System.out.printf("\nСумма %d членов послед. Фибоначчи = %d есть чётное число\n", n, sum);
@@ -33,7 +33,7 @@ public class Task_fibArray {
         return sum % 2 == 0;
     }
 
-    public static long fib(int n) {
+    public static long fib_a(int n) {
         long[] arr = new long[n+1];
         arr[0] = 0;
         arr[1] = 1;
