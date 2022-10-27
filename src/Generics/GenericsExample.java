@@ -11,7 +11,8 @@ public class GenericsExample {
         show(c, d);
 
     }
-
+    //синтаксис применения дженерикового типа в фн-ции
+    // public static <Т> возвр значение имя фн-ции(Т парам, ...)
     public static <T>  void show(T a, T b) {
         System.out.println(a + " " + b);
     }
