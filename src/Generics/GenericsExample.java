@@ -9,11 +9,15 @@ public class GenericsExample {
         Double d = 5.05;
         show(a, b);
         show(c, d);
+        String s = "ABC";
+        show(s, c);
 
     }
     //синтаксис применения дженерикового типа в фн-ции
     // public static <Т> возвр значение имя фн-ции(Т парам, ...)
-    public static <T>  void show(T a, T b) {
+    //Т и U позволяют нам использовать разные любые типы
+    public static <T, U>  void show(T a, U b) {
         System.out.println(a + " " + b);
     }
+
 }
