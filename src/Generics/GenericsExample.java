@@ -11,6 +11,12 @@ public class GenericsExample {
         show(c, d);
         String s = "ABC";
         show(s, c);
+        //Обьявляем класс с дженериком
+        Person<Integer> person =  new Person<>();
+        person.show(1, 2);
+
+        Person<Double> person2 = new Person<>(2.94, 5.44);
+        System.out.println(person2.getA() + " " + person2.getB());
 
     }
     //синтаксис применения дженерикового типа в фн-ции
