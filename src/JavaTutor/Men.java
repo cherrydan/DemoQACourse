@@ -28,4 +28,10 @@ public class Men implements Comparable<Men> {
         return Integer.compare(this.id - m.id, 0);
 
     }
+
+    // перепишем метод toString чтобы он выводил данные из нашего класса так, как нам нужно
+    @Override
+    public String toString() {
+        return "Id " + getId() + " Name " + getName();
+    }
 }
