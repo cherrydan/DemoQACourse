@@ -1,6 +1,6 @@
 package JavaTutor;
 
-public class Men implements Comparable<Men> {
+public class Men implements Comparable<Men>, Cloneable {
     private int id;
     private final String name;
 
@@ -33,5 +33,15 @@ public class Men implements Comparable<Men> {
     @Override
     public String toString() {
         return "Id " + getId() + " Name " + getName();
+    }
+
+    @Override
+    public Men clone() {
+        try {
+            return (Men)super.clone();
+
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }
