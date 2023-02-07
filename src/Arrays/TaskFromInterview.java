@@ -1,12 +1,6 @@
 package Arrays;
-
 import java.util.Random;
 import java.util.Scanner;
-
-// 1. Запросить у пользователя число N>=3
-// 2. Создать матрицу N*N
-// 3. Пройти по побочной диагонали
-// 4. Найти на ней минимальный элемент и вывести его на экран
 public class TaskFromInterview {
     public static void main(String[] args) {
         final int N;
@@ -16,7 +10,7 @@ public class TaskFromInterview {
         N = sc.nextInt();
         int min = 9;
         System.out.println();
-        if(N >= 3) {
+        if(N >= 3 && N % 2 != 0) {
             int[][] numbers = new int[N][N];
             Random r = new Random();
             for(int i = 0; i < numbers.length; i++) {
@@ -29,14 +23,14 @@ public class TaskFromInterview {
             for(int i = 0; i < N; i++) {
                 if(numbers[i][N-1-i] < min) {
                     min = numbers[i][N-1-i];
+                if(i == N/2) continue;
                 }
             }
 
             System.out.printf("\nМинимальный элемент побочной диагонали = %d\n", min);
         }
         else {
-            System.out.println("Число должно быть больше или равно 3");
+            System.out.println("Число должно быть больше или равно 3 и быть нечётным");
         }
     }
-
 }
